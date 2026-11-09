@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AcessaSP - Registre barreiras de acessibilidade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-inner">
+      <p class="marca">AcessaSP</p>
+      <nav aria-label="Principal">
+        <a href="/" aria-current="page">Registrar</a>
+        <a href="/ocorrencias.html">Ocorrências e indicadores</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Calçada quebrada, rampa que não existe: conte onde a cidade barra você.</h1>
+    <p class="lead">Cada registro vira dado. Com ele, é possível mostrar ao poder público quais barreiras são mais frequentes e quais precisam ser resolvidas primeiro.</p>
+
+    <section class="intro" aria-label="Sobre o projeto">
+      <div><strong>Problema</strong>Barreiras físicas nas ruas dificultam a locomoção de pessoas com deficiência, idosos e pessoas com mobilidade reduzida, e não existe um registro simples dessas ocorrências.</div>
+      <div><strong>Público-alvo</strong>Pessoas com deficiência, idosos, gestantes, pais com carrinho de bebê e a gestão pública da cidade.</div>
+      <div><strong>Objetivo</strong>Registrar barreiras, classificar a prioridade por regra e mostrar indicadores para apoiar decisões.</div>
+      <div><strong>ODS</strong>ODS 11 (Cidades e Comunidades Sustentáveis) e ODS 10 (Redução das Desigualdades).</div>
+    </section>
+
+    <h2>Registrar uma barreira</h2>
+    <div id="mensagem" class="msg escondido" role="alert" tabindex="-1"></div>
+
+    <form id="form" novalidate>
+      <div class="campo">
+        <label for="categoria">Tipo de barreira</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecione...</option>
+          <option>Calçada danificada</option>
+          <option>Falta de rampa</option>
+          <option>Piso tátil ausente</option>
+          <option>Semáforo sem sinal sonoro</option>
+          <option>Obstáculo na via</option>
+          <option>Transporte sem acessibilidade</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="local">Local <span class="dica">(rua, número ou ponto de referência)</span></label>
+        <input type="text" id="local" name="local" maxlength="120" placeholder="Ex.: Av. Paulista, 1000 - Bela Vista" required>
+      </div>
+
+      <div class="campo">
+        <label for="descricao">O que acontece no local? <span class="dica">(mínimo 10 caracteres)</span></label>
+        <textarea id="descricao" name="descricao" maxlength="500" required></textarea>
+      </div>
+
+      <div class="campo">
+        <label for="gravidade">Gravidade</label>
+        <select id="gravidade" name="gravidade" required>
+          <option value="">Selecione...</option>
+          <option>Baixa</option>
+          <option>Média</option>
+          <option>Alta</option>
+        </select>
+      </div>
+
+      <div class="campo check">
+        <input type="checkbox" id="localSensivel" name="localSensivel">
+        <label for="localSensivel">Fica perto de hospital, escola, terminal de transporte ou outro local de grande circulação</label>
+      </div>
+
+      <div class="campo">
+        <label for="relator">Seu nome <span class="dica">(opcional)</span></label>
+        <input type="text" id="relator" name="relator" maxlength="60">
+      </div>
+
+      <button type="submit">Registrar barreira</button>
+    </form>
+  </main>
+
+  <footer>Global Solution 2026.2 - CitizenTech - FIAP</footer>
+  <script src="/form.js"></script>
+</body>
+</html>

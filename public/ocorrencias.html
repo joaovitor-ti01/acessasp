@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AcessaSP - Ocorrências e indicadores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-inner">
+      <p class="marca">AcessaSP</p>
+      <nav aria-label="Principal">
+        <a href="/">Registrar</a>
+        <a href="/ocorrencias.html" aria-current="page">Ocorrências e indicadores</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>O que a cidade já registrou</h1>
+    <p class="lead">Os indicadores abaixo são calculados a partir de todos os registros salvos no MongoDB.</p>
+
+    <h2>Indicadores</h2>
+    <div class="indicadores">
+      <section class="painel" aria-labelledby="t-total">
+        <h3 id="t-total">Total de ocorrências</h3>
+        <div class="total" id="total">-</div>
+      </section>
+      <section class="painel" aria-labelledby="t-prio">
+        <h3 id="t-prio">Por prioridade</h3>
+        <div id="porPrioridade"></div>
+      </section>
+      <section class="painel" aria-labelledby="t-cat">
+        <h3 id="t-cat">Por tipo de barreira</h3>
+        <div id="porCategoria"></div>
+      </section>
+    </div>
+
+    <h2>Ocorrências registradas</h2>
+    <div class="filtros" role="group" aria-label="Filtrar por prioridade">
+      <button type="button" data-filtro="" aria-pressed="true">Todas</button>
+      <button type="button" data-filtro="Alta" aria-pressed="false">Alta</button>
+      <button type="button" data-filtro="Média" aria-pressed="false">Média</button>
+      <button type="button" data-filtro="Baixa" aria-pressed="false">Baixa</button>
+    </div>
+    <div id="erro" class="msg erro escondido" role="alert"></div>
+    <div id="lista"></div>
+  </main>
+
+  <footer>Global Solution 2026.2 - CitizenTech - FIAP</footer>
+  <script src="/lista.js"></script>
+</body>
+</html>
